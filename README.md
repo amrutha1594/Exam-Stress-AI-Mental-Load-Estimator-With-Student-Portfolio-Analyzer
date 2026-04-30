@@ -60,3 +60,4 @@ If omitted, the app defaults to `http://localhost:8000`.
 
 - Supabase is not required.
 - SQLite data is stored locally in `backend/stress_predictor.db`.
+# Exam-Stress-AI-Mental-Load-Estimator-With-Student-Portfolio-Analyzer
