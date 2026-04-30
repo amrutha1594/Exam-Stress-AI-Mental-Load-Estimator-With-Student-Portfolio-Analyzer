@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Academic Project - Calm Blue/Green Design System */
+
+@layer base {
+  :root {
+    /* Calm teal-blue primary palette */
+    --background: 180 20% 98%;
+    --foreground: 200 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 50% 10%;
+
+    /* Primary: Calming teal-blue */
+    --primary: 187 70% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Soft sage green */
+    --secondary: 158 40% 90%;
+    --secondary-foreground: 158 50% 25%;
+
+    --muted: 180 15% 94%;
+    --muted-foreground: 200 20% 45%;
+
+    /* Accent: Warm mint */
+    --accent: 168 50% 88%;
+    --accent-foreground: 168 60% 25%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 180 20% 88%;
+    --input: 180 20% 88%;
+    --ring: 187 70% 42%;
+
+    --radius: 0.75rem;
+
+    /* Custom stress level colors */
+    --stress-low: 142 70% 45%;
+    --stress-moderate: 45 90% 50%;
+    --stress-high: 0 75% 55%;
+
+    /* Gradient definitions */
+    --gradient-hero: linear-gradient(135deg, hsl(187 70% 42%) 0%, hsl(168 60% 45%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(180 20% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(168 50% 88%) 0%, hsl(187 50% 90%) 100%);
+
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(200 50% 10% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(200 50% 10% / 0.1), 0 2px 4px -2px hsl(200 50% 10% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(200 50% 10% / 0.1), 0 4px 6px -4px hsl(200 50% 10% / 0.1);
+    --shadow-xl: 0 20px 25px -5px hsl(200 50% 10% / 0.1), 0 8px 10px -6px hsl(200 50% 10% / 0.1);
+    --shadow-glow: 0 0 30px hsl(187 70% 42% / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 200 50% 6%;
+    --foreground: 180 20% 98%;
+
+    --card: 200 40% 10%;
+    --card-foreground: 180 20% 98%;
+
+    --popover: 200 40% 10%;
+    --popover-foreground: 180 20% 98%;
+
+    --primary: 187 70% 50%;
+    --primary-foreground: 200 50% 6%;
+
+    --secondary: 168 30% 18%;
+    --secondary-foreground: 168 50% 90%;
+
+    --muted: 200 30% 15%;
+    --muted-foreground: 180 15% 65%;
+
+    --accent: 168 40% 20%;
+    --accent-foreground: 168 50% 90%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 200 30% 18%;
+    --input: 200 30% 18%;
+    --ring: 187 70% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .gradient-accent {
+    background: var(--gradient-accent);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .text-gradient {
+    background: var(--gradient-hero);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .stress-low {
+    background-color: hsl(var(--stress-low));
+  }
+
+  .stress-moderate {
+    background-color: hsl(var(--stress-moderate));
+  }
+
+  .stress-high {
+    background-color: hsl(var(--stress-high));
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
